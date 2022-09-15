@@ -13,7 +13,7 @@ startButton.addEventListener('click', () => {
   textArr = textBox.split(' ')
   let speedReaderInterval = setInterval(() => {
     speedRead()
-  }, 100)
+  }, 400)
   if (i == textArr.length) {
     clearInterval(speedReaderInterval)
   }
