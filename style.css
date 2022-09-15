@@ -21,8 +21,13 @@ body {
 
 #button-container {
   justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
-
+#word-count {
+  margin-top: 40px;
+  margin-left: 20px;
+}
 #text-box {
   width: 70%;
   margin-top: 40px;
