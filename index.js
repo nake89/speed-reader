@@ -1,4 +1,4 @@
-console.log('start')
+console.log('start.')
 
 let el = document.getElementById('app')
 el.style.display = 'none'
