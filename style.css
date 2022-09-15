@@ -1,0 +1,16 @@
+body {
+  background-color: #353535;
+}
+#app {
+  margin-top: 40px;
+  margin: 100px;
+  padding: 20px;
+  background-color: #555555;
+  display: inline-block;
+}
+
+#startButton {
+  border: 1px solid #000;
+  background-color: #00ff19;
+  color: #fff;
+}
