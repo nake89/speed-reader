@@ -4,23 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML 5 Boilerplate</title>
+    <title>nake89's Speed Reader App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="flex-container">
+      <h1>Speed Reader</h1>
       <div id="text-box-container">
         <textarea id="text-box" rows="20">
 It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way--in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.</textarea
         >
         <br />
         <div id="button-container">
+          <div id="wpm-setting">
+            <select id="wpm">
+              <option value="400">400 WPM</option>
+              <option value="350">350 WPM</option>
+              <option value="300" selected>300 WPM</option>
+              <option value="250">250 WPM</option>
+              <option value="200">200 WPM</option>
+            </select>
+          </div>
           <input type="button" value="Start" id="start-button" />
           <div id="word-count"></div>
         </div>
       </div>
       <div id="app"></div>
     </div>
+    <div id="debug"></div>
     <script src="index.js"></script>
   </body>
 </html>
