@@ -17,6 +17,7 @@ let wpmDropdown = document.getElementById("wpm");
 wpmDropdown.onchange = function () {
   WPM = Number(this.value);
   document.getElementById("wpmNum").innerText = this.value;
+  getWordCount();
 };
 
 startButton.addEventListener("click", () => {
@@ -26,11 +27,15 @@ startButton.addEventListener("click", () => {
   textArr = textBoxValue.split(" ");
   let interval = (1 / (WPM / 60)) * 1000;
   let speedReaderInterval = setInterval(() => {
+    if (i == textArr.length - 1) {
+      clearInterval(speedReaderInterval);
+      const buttonElement = document.createElement("button");
+      buttonElement.style.backgroundColor = "#00ff19";
+      buttonElement.innerText = "Back";
+      el.append(buttonElement);
+    }
     speedRead();
   }, interval);
-  if (i == textArr.length) {
-    clearInterval(speedReaderInterval);
-  }
 });
 
 textBox.addEventListener("input", () => {
@@ -38,9 +43,10 @@ textBox.addEventListener("input", () => {
 });
 
 function getWordCount() {
+  let interval = 1 / (WPM / 60);
   let wordCount = textBox.value.split(" ").length;
   wordCountDiv.innerHTML = `Word count: ${wordCount} <br> WPM speed is: <span id="wpmNum">300</span>.<br>This text will read in ${(
-    wordCount / 5
+    wordCount * interval
   ).toFixed()} seconds.`;
 }
 
